@@ -18,7 +18,9 @@ https://www.npmjs.com/package/tslint-react
 
 node ./dist/index.js
 
-# Компиляция и запуск с помощью NPM (https://www.npmjs.com/package/ts-node)
+# Компиляция и запуск с помощью NPM
+
+(https://www.npmjs.com/package/ts-node)
 
 Installation
 
