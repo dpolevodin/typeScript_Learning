@@ -17,3 +17,12 @@
 
 // Ошибка TS2345: аргумент типа '"z"' не может быть
 // присвоен параметру типа 'number'.
+
+enum Color {
+    Red = '#c10000',
+    Blue = '#007ac1',
+    Pink = 0xc10050,
+    White = 255
+}
+
+console.log('color', Color.Blue)
