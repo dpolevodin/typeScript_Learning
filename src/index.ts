@@ -83,3 +83,73 @@ import { type } from "os";
 // console.log(typeof g) // object
 // let h = null
 // console.log(typeof h) // object
+
+// ------- ФУНКЦИИ ---------- //
+
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+// Именованная функция
+function greet(name: string) {
+  return "hello, " + name;
+}
+
+// Функциональное выражение
+let greet2 = function (name: string) {
+  return "hello, " + name;
+};
+
+// Выражение стрелочной функции
+let greet3 = (name: string) => {
+  return "hello, " + name;
+};
+
+// Сокращенное выражение стрелочной функции
+let greet4 = (name: string) => "hello, " + name;
+
+//Конструктор функции
+let greet5 = new Function("name", 'return "hello" + name'); // не рекомендуется
+
+// Функция со списком аргументов
+function sum(numbers: number[]): number {
+  return numbers.reduce((total, next) => total + next, 0);
+}
+console.log(sum([1, 2, 3])); // вернет 6 - number
+
+// Alternative
+
+function sumVariadic(...numbers: number[]): number {
+  return Array.from(arguments).reduce((total, n) => total + n, 0);
+}
+console.log(sumVariadic(1, 2, 3)); // вычисляется как 6
+
+// Функция-генератор
+
+function* createFibonacciGenerator() {
+  let a = 0;
+  let b = 1;
+  while (true) {
+    yield a;
+    [a, b] = [b, a + b];
+  }
+}
+let fibonacciGenerator = createFibonacciGenerator();
+// IterableIterator<number>
+fibonacciGenerator.next();
+// вычисляется как {значение:
+// выполнено: false}
+fibonacciGenerator.next();
+// вычисляется как {значение:
+// выполнено: false}
+fibonacciGenerator.next();
+// вычисляется как {значение:
+// выполнено: false}
+fibonacciGenerator.next();
+// вычисляется как {значение:
+// выполнено: false}
+fibonacciGenerator.next();
+// вычисляется как {значение:
+// выполнено: false}
+fibonacciGenerator.next();
+// вычисляется как {зн
